@@ -61,7 +61,7 @@ public class TerrainMeshGenerator : MonoBehaviour {
     }
 
     private Vector2[] GetOffsetSeed() {
-        seed = Random.Range(0, 1000);
+        seed = Random.Range(int.MinValue, int.MaxValue);
 
         // changes area of map
         System.Random prng = new System.Random(seed);
