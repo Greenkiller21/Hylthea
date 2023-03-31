@@ -149,12 +149,11 @@ public class TerrainMeshGenerator : MonoBehaviour {
             // Stop generation if height difference between 2 vertices is too steep
             if (System.Math.Abs(lastNoiseHeight - worldPt.y) < 25) {
                 // min height for object generation
-                if (noiseHeight > 100) {
+                if (noiseHeight > waterLevel) {
                     // Chance to generate
                     if (Random.Range(1, 5) == 1) {
                         GameObject objectToSpawn = objects[Random.Range(0, objects.Length)];
-                        var spawnAboveTerrainBy = noiseHeight * 2;
-                        Instantiate(objectToSpawn, new Vector3(mesh.vertices[i].x * MESH_SCALE, spawnAboveTerrainBy, mesh.vertices[i].z * MESH_SCALE), Quaternion.identity);
+                        Instantiate(objectToSpawn, new Vector3(mesh.vertices[i].x * MESH_SCALE, noiseHeight, mesh.vertices[i].z * MESH_SCALE), Quaternion.identity);
                     }
                 }
             }
@@ -172,10 +171,9 @@ public class TerrainMeshGenerator : MonoBehaviour {
 
         GetComponent<MeshCollider>().sharedMesh = mesh;
         gameObject.transform.localScale = new Vector3(MESH_SCALE, MESH_SCALE, MESH_SCALE);
-
-        MapEmbellishments();
-
         waterPlane.transform.localScale = new Vector3(xSize / 2.0f, 1f, zSize / 2.0f);
         waterPlane.transform.position = new Vector3(MESH_SCALE * xSize / 2.0f, waterLevel, MESH_SCALE * zSize / 2.0f);
+
+        MapEmbellishments();
     }
 }

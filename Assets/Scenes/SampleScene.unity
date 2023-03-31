@@ -157,7 +157,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterPlane: {fileID: 780813997}
   waterLevel: 2.8
-  objects: []
+  objects:
+  - {fileID: 117604, guid: 9469bb1d3aa88ca40aa4079e96a27f8e, type: 3}
+  - {fileID: 119512, guid: 5578b82f17c954843901e8b68ca21dcc, type: 3}
+  - {fileID: 183960, guid: 491333d4c0bd88148813a9dde7fe955b, type: 3}
   heightCurve:
     serializedVersion: 2
     m_Curve:
@@ -677,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 10
-  jumpHeight: 5
+  jumpHeight: 2
   gravityValue: -9.81
 --- !u!4 &543990572
 Transform:
