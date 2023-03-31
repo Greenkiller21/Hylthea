@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterPlane: {fileID: 780813997}
-  waterLevel: 2.8
+  waterLevel: 3
   objects:
   - {fileID: 117604, guid: 9469bb1d3aa88ca40aa4079e96a27f8e, type: 3}
   - {fileID: 119512, guid: 5578b82f17c954843901e8b68ca21dcc, type: 3}
