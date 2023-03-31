@@ -717,8 +717,8 @@ GameObject:
   - component: {fileID: 780814000}
   - component: {fileID: 780813999}
   - component: {fileID: 780813998}
-  m_Layer: 0
-  m_Name: Plane
+  m_Layer: 4
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
