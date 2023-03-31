@@ -2,15 +2,19 @@ using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter))]
 public class TerrainMeshGenerator : MonoBehaviour {
-    private int MESH_SCALE = 100;
+    private int MESH_SCALE = 5;
 
+    public GameObject waterPlane;
+    public float waterLevel;
     public GameObject[] objects;
-
-    [SerializeField]
-    private AnimationCurve heightCurve;
-
-    [SerializeField]
-    private Gradient gradient;
+    public AnimationCurve heightCurve;
+    public Gradient gradient;
+    public int xSize;
+    public int zSize;
+    public float scale;
+    public int octaves;
+    public float lacunarity;
+    public int seed;
 
     private Mesh mesh;
     private Vector3[] vertices;
@@ -20,15 +24,6 @@ public class TerrainMeshGenerator : MonoBehaviour {
 
     private float minTerrainheight;
     private float maxTerrainheight;
-
-    public int xSize;
-    public int zSize;
-
-    public float scale;
-    public int octaves;
-    public float lacunarity;
-
-    public int seed;
 
     private float lastNoiseHeight;
 
@@ -179,5 +174,8 @@ public class TerrainMeshGenerator : MonoBehaviour {
         gameObject.transform.localScale = new Vector3(MESH_SCALE, MESH_SCALE, MESH_SCALE);
 
         MapEmbellishments();
+
+        waterPlane.transform.localScale = new Vector3(xSize / 2.0f, 1f, zSize / 2.0f);
+        waterPlane.transform.position = new Vector3(MESH_SCALE * xSize / 2.0f, waterLevel, MESH_SCALE * zSize / 2.0f);
     }
 }
